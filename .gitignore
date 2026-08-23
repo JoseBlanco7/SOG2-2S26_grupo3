@@ -1,0 +1,12 @@
+# Secretos / configuracion local
+.env
+
+# Python
+__pycache__/
+*.pyc
+venv/
+.venv/
+
+# Salidas regenerables del analisis
+ANALISIS/graficos/
+ANALISIS/resumen_estadistico.txt

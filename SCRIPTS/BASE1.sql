@@ -1,8 +1,3 @@
-CREATE DATABASE IF NOT EXISTS venta_online
-    CHARACTER SET utf8mb4
-    COLLATE utf8mb4_unicode_ci;
-
-USE venta_online;
 
 DROP TABLE IF EXISTS ventas;
 DROP TABLE IF EXISTS ventas_staging;
@@ -22,28 +17,20 @@ CREATE TABLE ventas_staging (
     Vale VARCHAR(10) NOT NULL
 );
 
--- Cambiar ruta por la real del CSV.
-SET GLOBAL local_infile = 1;
-
-LOAD DATA LOCAL INFILE 'C:/temp/Venta_online_c.csv'
-INTO TABLE ventas_staging
-FIELDS TERMINATED BY ';'
-LINES TERMINATED BY '\r\n'
-IGNORE 1 LINES;
 
 CREATE TABLE ventas (
     Id_cliente INT NOT NULL,
-    Edad TINYINT UNSIGNED NOT NULL,
-    Genero TINYINT UNSIGNED NOT NULL,
+    Edad SMALLINT NOT NULL,
+    Genero SMALLINT NOT NULL,
     Venta_total DECIMAL(12, 3) NOT NULL,
-    N_Compras SMALLINT UNSIGNED NOT NULL,
+    N_Compras SMALLINT NOT NULL,
     FechaCompra DATE NOT NULL,
     MontoCompra DECIMAL(12, 3) NOT NULL,
-    MetodoPago TINYINT UNSIGNED NOT NULL,
-    Tiempo SMALLINT UNSIGNED NOT NULL,
-    Navegador TINYINT UNSIGNED NOT NULL,
-    Boletin TINYINT UNSIGNED NOT NULL,
-    Vale TINYINT UNSIGNED NOT NULL,
+    MetodoPago SMALLINT NOT NULL,
+    Tiempo SMALLINT NOT NULL,
+    Navegador SMALLINT NOT NULL,
+    Boletin SMALLINT NOT NULL,
+    Vale SMALLINT NOT NULL,
     PRIMARY KEY (Id_cliente),
     CONSTRAINT chk_ventas_genero CHECK (Genero IN (0, 1)),
     CONSTRAINT chk_ventas_metodo_pago CHECK (MetodoPago IN (0, 1, 2)),
@@ -57,18 +44,18 @@ INSERT INTO ventas (
     MontoCompra, MetodoPago, Tiempo, Navegador, Boletin, Vale
 )
 SELECT
-    CAST(Id_cliente AS UNSIGNED),
-    CAST(Edad AS UNSIGNED),
-    CAST(Genero AS UNSIGNED),
+    CAST(Id_cliente AS INTEGER),
+    CAST(Edad AS INTEGER),
+    CAST(Genero AS INTEGER),
     CAST(Venta_total AS DECIMAL(12, 3)),
-    CAST(N_Compras AS UNSIGNED),
-    STR_TO_DATE(FechaCompra, '%d.%m.%y'),
+    CAST(N_Compras AS INTEGER),
+    TO_DATE(FechaCompra, 'DD.MM.YY'),
     CAST(MontoCompra AS DECIMAL(12, 3)),
-    CAST(MetodoPago AS UNSIGNED),
-    CAST(Tiempo AS UNSIGNED),
-    CAST(Navegador AS UNSIGNED),
-    CAST(Boletin AS UNSIGNED),
-    CAST(Vale AS UNSIGNED)
+    CAST(MetodoPago AS INTEGER),
+    CAST(Tiempo AS INTEGER),
+    CAST(Navegador AS INTEGER),
+    CAST(Boletin AS INTEGER),
+    CAST(Vale AS INTEGER)
 FROM ventas_staging;
 
 SELECT COUNT(*) AS registros_cargados FROM ventas;
