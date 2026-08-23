@@ -1,13 +1,3 @@
-"""
-Agente de Google ADK conectado al MCP Server local del proyecto.
-
-Ejecutar:
-1) Levantar el MCP server en otra terminal:
-   cd MCP_SERVER && python server.py
-2) Correr este agente con ADK:
-   cd AGENTE && adk web
-"""
-
 from __future__ import annotations
 
 import os
@@ -27,8 +17,6 @@ MCP_SERVER_PYTHON = ROOT / "MCP_SERVER" / "venv" / "Scripts" / "python.exe"
 
 
 def _mcp_python_command() -> str:
-    # Usa el interprete del venv del servidor si ya existe.
-    # Si no existe aun, cae al python del entorno actual.
     if MCP_SERVER_PYTHON.exists():
         return str(MCP_SERVER_PYTHON)
     return "python"
