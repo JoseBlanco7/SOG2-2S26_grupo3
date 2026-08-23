@@ -10,3 +10,7 @@ venv/
 # Salidas regenerables del analisis
 ANALISIS/graficos/
 ANALISIS/resumen_estadistico.txt
+
+
+# Estado local de sesiones de ADK (adk web)
+AGENTE/.adk/
