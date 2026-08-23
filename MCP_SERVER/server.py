@@ -9,25 +9,26 @@ Cada tool ejecuta una funcion SQL fija y sin parametros de usuario
 Uso:
 cd "MCP_SERVER"
 python -m venv venv
-venv\Scripts\activate
+venv/Scripts/activate
 pip install -r requirements.txt
 python server.py
-
 """
 
 import os
 from datetime import date, datetime
 from decimal import Decimal
+from pathlib import Path
 from typing import Any
 
 import psycopg2
 import psycopg2.extras
 from dotenv import find_dotenv, load_dotenv
-from mcp.server.fastmcp import FastMCP
+from mcp.server.fastmcp import FastMCP, Image
 
 load_dotenv(find_dotenv())
 
 DATABASE_URL = os.environ["DATABASE_URL"]
+GRAFICOS_DIR = Path(__file__).resolve().parent.parent / "ANALISIS" / "graficos"
 
 mcp = FastMCP("venta-online-analytics")
 
@@ -49,6 +50,16 @@ def _call_sp(nombre_funcion: str) -> list[dict[str, Any]]:
     finally:
         conn.close()
     return [{k: _jsonable(v) for k, v in fila.items()} for fila in filas]
+
+
+def _leer_grafico(nombre_archivo: str) -> Image:
+    ruta = GRAFICOS_DIR / nombre_archivo
+    if not ruta.exists():
+        raise FileNotFoundError(
+            f"No se encontro '{nombre_archivo}' en {GRAFICOS_DIR}. "
+            "Hay que correr ANALISIS/eda.py primero para generar los graficos."
+        )
+    return Image(data=ruta.read_bytes(), format="png")
 
 
 @mcp.tool()
@@ -151,6 +162,54 @@ def genero_metodo_pago() -> list[dict[str, Any]]:
 def coeficiente_phi_boletin_vale() -> list[dict[str, Any]]:
     """Coeficiente phi que mide la correlacion entre usar Boletin y usar Vale."""
     return _call_sp("sp_coeficiente_phi_boletin_vale")
+
+
+@mcp.tool()
+def grafico_ventas_por_mes() -> Image:
+    """Grafico de barras con las ventas totales por mes (imagen PNG)."""
+    return _leer_grafico("01_ventas_por_mes.png")
+
+
+@mcp.tool()
+def grafico_metodo_pago() -> Image:
+    """Grafico de barras con las ventas totales por metodo de pago (imagen PNG)."""
+    return _leer_grafico("02_metodo_pago.png")
+
+
+@mcp.tool()
+def grafico_navegador() -> Image:
+    """Grafico de barras con los registros por navegador o canal (imagen PNG)."""
+    return _leer_grafico("03_navegador.png")
+
+
+@mcp.tool()
+def grafico_boletin_vale() -> Image:
+    """Grafico de barras con el uso de Boletin y Vale (imagen PNG)."""
+    return _leer_grafico("04_boletin_vale.png")
+
+
+@mcp.tool()
+def grafico_segmentacion_edad() -> Image:
+    """Grafico de barras con la venta promedio por grupo de edad (imagen PNG)."""
+    return _leer_grafico("05_segmentacion_edad.png")
+
+
+@mcp.tool()
+def grafico_comparacion_genero() -> Image:
+    """Grafico de barras con la venta promedio por genero (imagen PNG)."""
+    return _leer_grafico("06_comparacion_genero.png")
+
+
+@mcp.tool()
+def grafico_correlacion_edad_venta() -> Image:
+    """Grafico de dispersion de edad vs venta total, con el coeficiente de correlacion (imagen PNG)."""
+    return _leer_grafico("07_correlacion_edad_venta.png")
+
+
+@mcp.tool()
+def grafico_tendencia_boletin_vale() -> Image:
+    """Grafico de lineas con el uso de boletines y vales por mes (imagen PNG)."""
+    return _leer_grafico("08_tendencia_boletin_vale.png")
 
 
 if __name__ == "__main__":
