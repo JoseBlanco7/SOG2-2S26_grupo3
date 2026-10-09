@@ -1,0 +1,6 @@
+{
+  "Name": "QuetzalMart_RPA",
+  "ProjectType": "Process",
+  "Description": "Consolida clientes y productos desde Excel y los carga en Odoo",
+  "MainFile": "Main.xaml"
+}

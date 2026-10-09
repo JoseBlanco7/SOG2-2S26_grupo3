@@ -1,0 +1,575 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" VisualBasic.Settings="{x:Null}" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:si="clr-namespace:System.IO;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:upr="clr-namespace:UiPath.Platform.ResourceHandling;assembly=UiPath.Platform" xmlns:uwah="clr-namespace:UiPath.Web.Activities.Http;assembly=UiPath.Web.Activities" xmlns:uwahm="clr-namespace:UiPath.Web.Activities.Http.Models;assembly=UiPath.Web.Activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>System.Linq.Expressions</x:String>
+      <x:String>UiPath.Shared.Activities.Business</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>UiPath.Excel</x:String>
+      <x:String>UiPath.Excel.Model</x:String>
+      <x:String>UiPath.Excel.Activities.Business</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>System.Numerics</x:String>
+      <x:String>UiPath.Platform.ResourceHandling</x:String>
+      <x:String>UiPath.Platform</x:String>
+      <x:String>UiPath.Excel.Activities</x:String>
+      <x:String>Newtonsoft.Json</x:String>
+      <x:String>UiPath.Web.Activities.Http.Models</x:String>
+      <x:String>System.Net</x:String>
+      <x:String>UiPath.Web.Activities.Http</x:String>
+      <x:String>UiPath.Sdk.Activities</x:String>
+      <x:String>UiPath.Sdk.Activities.DependencyInjection.Contracts</x:String>
+      <x:String>UiPath.Sdk.Activities.DependencyInjection</x:String>
+      <x:String>UiPath.Web.Activities</x:String>
+      <x:String>System.Text.RegularExpressions</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Net.Mail</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>System.Private.Xml</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Data.SqlClient</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem.Watcher</AssemblyReference>
+      <AssemblyReference>System.IO.Packaging</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem.AccessControl</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem.DriveInfo</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>NPOI.Core</AssemblyReference>
+      <AssemblyReference>UiPath.Web.Activities</AssemblyReference>
+      <AssemblyReference>System.Runtime.Numerics</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.CodedWorkflows</AssemblyReference>
+      <AssemblyReference>Newtonsoft.Json</AssemblyReference>
+      <AssemblyReference>System.Net.Primitives</AssemblyReference>
+      <AssemblyReference>System.Net.HttpListener</AssemblyReference>
+      <AssemblyReference>System.Net.WebProxy</AssemblyReference>
+      <AssemblyReference>System.Net.NameResolution</AssemblyReference>
+      <AssemblyReference>System.Net.WebHeaderCollection</AssemblyReference>
+      <AssemblyReference>System.Net.WebClient</AssemblyReference>
+      <AssemblyReference>System.Net.Requests</AssemblyReference>
+      <AssemblyReference>System.Text.RegularExpressions</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <sap:WorkflowViewStateService.ViewState>
+    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+      <x:Boolean x:Key="ShouldExpandAll">True</x:Boolean>
+    </scg:Dictionary>
+  </sap:WorkflowViewStateService.ViewState>
+  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="1240.4,13767.199999999999" sap2010:WorkflowViewState.IdRef="Sequence_6">
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <Sequence DisplayName="Secuencia" sap:VirtualizedContainerService.HintSize="649.6,13744" sap2010:WorkflowViewState.IdRef="Sequence_2">
+      <Sequence.Variables>
+        <Variable x:TypeArguments="x:Int32" Name="blanqueadas" />
+        <Variable x:TypeArguments="x:Int32" Name="cantidad" />
+        <Variable x:TypeArguments="x:Int32" Name="uid" />
+        <Variable x:TypeArguments="x:String" Name="respuesta" />
+        <Variable x:TypeArguments="x:String" Name="respPaises" />
+        <Variable x:TypeArguments="x:String" Name="cuerpo" />
+        <Variable x:TypeArguments="x:String" Name="claveOdoo">
+          <Variable.Default>
+            <Literal x:TypeArguments="x:String">3e90708a187c07fb01eab118f06f354c51d67e95</Literal>
+          </Variable.Default>
+        </Variable>
+        <Variable x:TypeArguments="x:String" Name="usuarioOdoo">
+          <Variable.Default>
+            <Literal x:TypeArguments="x:String">sistemas.correo.info@gmail.com</Literal>
+          </Variable.Default>
+        </Variable>
+        <Variable x:TypeArguments="x:String" Name="bdOdoo">
+          <Variable.Default>
+            <Literal x:TypeArguments="x:String">quetzalmart</Literal>
+          </Variable.Default>
+        </Variable>
+        <Variable x:TypeArguments="x:String" Name="urlOdoo">
+          <Variable.Default>
+            <Literal x:TypeArguments="x:String">http://32.198.12.185</Literal>
+          </Variable.Default>
+        </Variable>
+        <Variable x:TypeArguments="upr:IResource" Name="archivoRes" />
+        <Variable x:TypeArguments="sd:DataTable" Default="[New System.Data.DataTable]" Name="dtTemp" />
+        <Variable x:TypeArguments="sd:DataTable" Default="[New System.Data.DataTable]" Name="dtProductos" />
+        <Variable x:TypeArguments="sd:DataTable" Default="[New System.Data.DataTable]" Name="dtClientes" />
+        <Variable x:TypeArguments="x:String" Name="rutaRaiz">
+          <Variable.Default>
+            <Literal x:TypeArguments="x:String">C:\Users\joshu\Desktop\10mo\Geren2\lab\Proyecto\prueba</Literal>
+          </Variable.Default>
+        </Variable>
+        <Variable x:TypeArguments="scg:IEnumerable(x:String)" Name="hojas" />
+        <Variable x:TypeArguments="x:Int32" Name="descartadas" />
+        <Variable x:TypeArguments="uwahm:HttpResponseSummary" Name="resp" />
+        <Variable x:TypeArguments="x:Int32" Name="limiteCarga">
+          <Variable.Default>
+            <Literal x:TypeArguments="x:Int32" />
+          </Variable.Default>
+        </Variable>
+        <Variable x:TypeArguments="x:String" Name="cuerpoStock" />
+        <Variable x:TypeArguments="x:Int32" Name="cantidadStock" />
+      </Sequence.Variables>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <ui:LogMessage DisplayName="Registrar mensaje" sap:VirtualizedContainerService.HintSize="616,174.4" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Inicio: leyendo archivos de &quot; + rutaRaiz]" />
+      <ui:ForEachFileX DisplayName="Para cada archivo en la carpeta" Filter="*.xls*" Folder="[rutaRaiz]" sap:VirtualizedContainerService.HintSize="616,3940.8" sap2010:WorkflowViewState.IdRef="ForEachFileX_1" IncludeSubDirectories="True" OrderBy="NameAscFirst" SkipFolderWithoutPermission="False">
+        <ui:ForEachFileX.Body>
+          <ActivityAction x:TypeArguments="si:FileInfo, x:Int32">
+            <ActivityAction.Argument1>
+              <DelegateInArgument x:TypeArguments="si:FileInfo" Name="CurrentFile" />
+            </ActivityAction.Argument1>
+            <ActivityAction.Argument2>
+              <DelegateInArgument x:TypeArguments="x:Int32" Name="CurrentIndex" />
+            </ActivityAction.Argument2>
+            <Sequence DisplayName="Hacer" sap:VirtualizedContainerService.HintSize="555.2,3759.2" sap2010:WorkflowViewState.IdRef="Sequence_3">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <If Condition="[Not CurrentFile.Name.StartsWith(&quot;~$&quot;)]" sap:VirtualizedContainerService.HintSize="521.6,3699.2" sap2010:WorkflowViewState.IdRef="If_1">
+                <If.Then>
+                  <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="520,3480" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <ui:LogMessage DisplayName="Registrar mensaje" sap:VirtualizedContainerService.HintSize="486.4,174.4" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Archivo encontrado: &quot; + CurrentFile.Name]" />
+                    <Assign DisplayName="Asignar" sap:VirtualizedContainerService.HintSize="486.4,174.4" sap2010:WorkflowViewState.IdRef="Assign_1">
+                      <Assign.To>
+                        <OutArgument x:TypeArguments="upr:IResource">[archivoRes]</OutArgument>
+                      </Assign.To>
+                      <Assign.Value>
+                        <InArgument x:TypeArguments="upr:IResource">[UiPath.Platform.ResourceHandling.LocalResource.FromPath(CurrentFile.FullName)]</InArgument>
+                      </Assign.Value>
+                    </Assign>
+                    <ui:GetSheets DisplayName="Obtener libro de hojas" sap:VirtualizedContainerService.HintSize="486.4,122.4" sap2010:WorkflowViewState.IdRef="GetSheets_1" Result="[hojas]" WorkbookPathResource="[archivoRes]" />
+                    <ui:LogMessage DisplayName="Registrar mensaje" sap:VirtualizedContainerService.HintSize="486.4,174.4" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Info" Message="[&quot;Hojas de &quot; + CurrentFile.Name + &quot;: &quot; + String.Join(&quot;, &quot;, hojas)]" />
+                    <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each currentItem" sap:VirtualizedContainerService.HintSize="486.4,2774.4" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[hojas]">
+                      <ui:ForEach.Body>
+                        <ActivityAction x:TypeArguments="x:String">
+                          <ActivityAction.Argument>
+                            <DelegateInArgument x:TypeArguments="x:String" Name="hoja" />
+                          </ActivityAction.Argument>
+                          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="484.8,2652.8" sap2010:WorkflowViewState.IdRef="Sequence_11">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <If Condition="[hoja.Trim().ToLower() = &quot;clientes&quot;]" sap:VirtualizedContainerService.HintSize="451.2,1300.8" sap2010:WorkflowViewState.IdRef="If_3">
+                              <If.Then>
+                                <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="449.6,1072.8" sap2010:WorkflowViewState.IdRef="Sequence_12">
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                  <ui:ReadRange Range="{x:Null}" AddHeaders="True" DataTable="[dtTemp]" DisplayName="Leer libro de intervalo" sap:VirtualizedContainerService.HintSize="416,226.4" sap2010:WorkflowViewState.IdRef="ReadRange_1" SheetName="[hoja]" WorkbookPathResource="[archivoRes]" />
+                                  <ui:AddDataColumn x:TypeArguments="x:Object" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" MaxLength="{x:Null}" Unique="{x:Null}" ColumnName="Origen" DataTable="[dtTemp]" DefaultValue="[CurrentFile.Name]" DisplayName="Añadir columna de datos" sap:VirtualizedContainerService.HintSize="416,220" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_3" />
+                                  <ui:InvokeCode ContinueOnError="{x:Null}" Code="For Each c As System.Data.DataColumn In origenTabla.Columns&#xA;    Dim n As String = c.ColumnName.Replace(&quot;*&quot;, &quot;&quot;).Trim()&#xA;    If n.ToLower() = &quot;id externo&quot; Then n = &quot;External ID&quot;&#xA;    If n &lt;&gt; c.ColumnName AndAlso Not origenTabla.Columns.Contains(n) Then c.ColumnName = n&#xA;Next&#xA;destinoTabla.Merge(origenTabla)&#xA;" DisplayName="Invocar código" sap:VirtualizedContainerService.HintSize="416,400.8" sap2010:WorkflowViewState.IdRef="InvokeCode_1">
+                                    <ui:InvokeCode.Arguments>
+                                      <InArgument x:TypeArguments="sd:DataTable" x:Key="origenTabla">[dtTemp]</InArgument>
+                                      <InArgument x:TypeArguments="sd:DataTable" x:Key="destinoTabla">[dtClientes]</InArgument>
+                                    </ui:InvokeCode.Arguments>
+                                  </ui:InvokeCode>
+                                  <ui:LogMessage DisplayName="Registrar mensaje" sap:VirtualizedContainerService.HintSize="416,165.6" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="Info" Message="[&quot;Clientes: &quot; + dtTemp.Rows.Count.ToString + &quot; filas de &quot; + CurrentFile.Name]" />
+                                </Sequence>
+                              </If.Then>
+                              <If.Else>
+                                <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="449.6,89.6" sap2010:WorkflowViewState.IdRef="Sequence_13">
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                </Sequence>
+                              </If.Else>
+                            </If>
+                            <If Condition="[hoja.Trim().ToLower() = &quot;productos&quot;]" sap:VirtualizedContainerService.HintSize="451.2,1292" sap2010:WorkflowViewState.IdRef="If_5">
+                              <If.Then>
+                                <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="449.6,1072.8" sap2010:WorkflowViewState.IdRef="Sequence_14">
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                  <ui:ReadRange Range="{x:Null}" AddHeaders="True" DataTable="[dtTemp]" DisplayName="Leer libro de intervalo" sap:VirtualizedContainerService.HintSize="416,226.4" sap2010:WorkflowViewState.IdRef="ReadRange_2" SheetName="[hoja]" WorkbookPathResource="[archivoRes]" />
+                                  <ui:AddDataColumn x:TypeArguments="x:Object" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" MaxLength="{x:Null}" Unique="{x:Null}" ColumnName="Origen" DataTable="[dtTemp]" DefaultValue="[CurrentFile.Name]" DisplayName="Añadir columna de datos" sap:VirtualizedContainerService.HintSize="416,220" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_5" />
+                                  <ui:InvokeCode ContinueOnError="{x:Null}" Code="For Each c As System.Data.DataColumn In origenTabla.Columns&#xA;    Dim n As String = c.ColumnName.Replace(&quot;*&quot;, &quot;&quot;).Trim()&#xA;    If n.ToLower() = &quot;id externo&quot; Then n = &quot;External ID&quot;&#xA;    If n &lt;&gt; c.ColumnName AndAlso Not origenTabla.Columns.Contains(n) Then c.ColumnName = n&#xA;Next&#xA;destinoTabla.Merge(origenTabla)&#xA;" DisplayName="Invocar código" sap:VirtualizedContainerService.HintSize="416,400.8" sap2010:WorkflowViewState.IdRef="InvokeCode_2">
+                                    <ui:InvokeCode.Arguments>
+                                      <InArgument x:TypeArguments="sd:DataTable" x:Key="origenTabla">[dtTemp]</InArgument>
+                                      <InArgument x:TypeArguments="sd:DataTable" x:Key="destinoTabla">[dtProductos]</InArgument>
+                                    </ui:InvokeCode.Arguments>
+                                  </ui:InvokeCode>
+                                  <ui:LogMessage DisplayName="Registrar mensaje" sap:VirtualizedContainerService.HintSize="416,165.6" sap2010:WorkflowViewState.IdRef="LogMessage_8" Level="Info" Message="[&quot;Productos: &quot; + dtTemp.Rows.Count.ToString + &quot; filas de &quot; + CurrentFile.Name]" />
+                                </Sequence>
+                              </If.Then>
+                              <If.Else>
+                                <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="449.6,89.6" sap2010:WorkflowViewState.IdRef="Sequence_15">
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                </Sequence>
+                              </If.Else>
+                            </If>
+                          </Sequence>
+                        </ActivityAction>
+                      </ui:ForEach.Body>
+                    </ui:ForEach>
+                  </Sequence>
+                </If.Then>
+                <If.Else>
+                  <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="520,89.6" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </Sequence>
+                </If.Else>
+              </If>
+            </Sequence>
+          </ActivityAction>
+        </ui:ForEachFileX.Body>
+      </ui:ForEachFileX>
+      <ui:InvokeCode ContinueOnError="{x:Null}" Code="Dim vistos As New System.Collections.Generic.HashSet(Of String)&#xA;Dim quitar As New System.Collections.Generic.List(Of System.Data.DataRow)&#xA;For Each r As System.Data.DataRow In dt.Rows&#xA;    For Each c As System.Data.DataColumn In dt.Columns&#xA;        If TypeOf r(c) Is String Then r(c) = r(c).ToString().Trim()&#xA;    Next&#xA;    Dim nombre As String = &quot;&quot;&#xA;    If dt.Columns.Contains(&quot;Name&quot;) AndAlso Not r.IsNull(&quot;Name&quot;) Then nombre = r(&quot;Name&quot;).ToString().Trim()&#xA;    If nombre = &quot;&quot; Then&#xA;        quitar.Add(r)&#xA;        Continue For&#xA;    End If&#xA;    If dt.Columns.Contains(&quot;Email&quot;) AndAlso Not r.IsNull(&quot;Email&quot;) Then&#xA;        Dim correo As String = r(&quot;Email&quot;).ToString().Trim().ToLower()&#xA;        r(&quot;Email&quot;) = correo&#xA;        If correo &lt;&gt; &quot;&quot; Then&#xA;            If Not vistos.Add(correo) Then quitar.Add(r)&#xA;        End If&#xA;    End If&#xA;Next&#xA;For Each r As System.Data.DataRow In quitar&#xA;    dt.Rows.Remove(r)&#xA;Next&#xA;descartadas = quitar.Count" DisplayName="Invocar código" sap:VirtualizedContainerService.HintSize="616,400.8" sap2010:WorkflowViewState.IdRef="InvokeCode_3">
+        <ui:InvokeCode.Arguments>
+          <InArgument x:TypeArguments="sd:DataTable" x:Key="dt">[dtClientes]</InArgument>
+          <OutArgument x:TypeArguments="x:Int32" x:Key="descartadas">[descartadas]</OutArgument>
+        </ui:InvokeCode.Arguments>
+      </ui:InvokeCode>
+      <ui:LogMessage DisplayName="Registrar mensaje" sap:VirtualizedContainerService.HintSize="616,174.4" sap2010:WorkflowViewState.IdRef="LogMessage_9" Level="Info" Message="[&quot;Clientes descartados: &quot; + descartadas.ToString]" />
+      <ui:InvokeCode ContinueOnError="{x:Null}" Code="Dim vistos As New System.Collections.Generic.HashSet(Of String)&#xA;Dim quitar As New System.Collections.Generic.List(Of System.Data.DataRow)&#xA;Dim numericas As String() = New String() {&quot;Sales Price&quot;, &quot;Cost&quot;, &quot;Weight&quot;}&#xA;Dim blanqueados As Integer = 0&#xA;For Each r As System.Data.DataRow In dt.Rows&#xA;    For Each c As System.Data.DataColumn In dt.Columns&#xA;        If TypeOf r(c) Is String Then r(c) = r(c).ToString().Trim()&#xA;    Next&#xA;    Dim nombre As String = &quot;&quot;&#xA;    If dt.Columns.Contains(&quot;Name&quot;) AndAlso Not r.IsNull(&quot;Name&quot;) Then nombre = r(&quot;Name&quot;).ToString().Trim()&#xA;    If nombre = &quot;&quot; Then&#xA;        quitar.Add(r)&#xA;        Continue For&#xA;    End If&#xA;    For Each nc As String In numericas&#xA;        If dt.Columns.Contains(nc) AndAlso Not r.IsNull(nc) Then&#xA;            Dim valor As Object = r(nc)&#xA;            If Not (TypeOf valor Is Double OrElse TypeOf valor Is Decimal OrElse TypeOf valor Is Integer) Then&#xA;                Dim txt As String = valor.ToString().Trim()&#xA;                Dim n As Double&#xA;                If txt = &quot;&quot; Then&#xA;                    r(nc) = &quot;&quot;&#xA;                ElseIf Double.TryParse(txt, System.Globalization.NumberStyles.Any, System.Globalization.CultureInfo.CurrentCulture, n) OrElse Double.TryParse(txt, System.Globalization.NumberStyles.Any, System.Globalization.CultureInfo.InvariantCulture, n) Then&#xA;                    r(nc) = n.ToString(System.Globalization.CultureInfo.InvariantCulture)&#xA;                Else&#xA;                    r(nc) = &quot;&quot;&#xA;                    blanqueados += 1&#xA;                End If&#xA;            End If&#xA;        End If&#xA;    Next&#xA;    Dim clave As String = &quot;&quot;&#xA;    If dt.Columns.Contains(&quot;External ID&quot;) AndAlso Not r.IsNull(&quot;External ID&quot;) Then clave = r(&quot;External ID&quot;).ToString().Trim().ToLower()&#xA;    If clave = &quot;&quot; AndAlso dt.Columns.Contains(&quot;Internal Reference&quot;) AndAlso Not r.IsNull(&quot;Internal Reference&quot;) Then clave = r(&quot;Internal Reference&quot;).ToString().Trim().ToLower()&#xA;    If clave &lt;&gt; &quot;&quot; Then&#xA;        If Not vistos.Add(clave) Then quitar.Add(r)&#xA;    End If&#xA;Next&#xA;For Each r As System.Data.DataRow In quitar&#xA;    dt.Rows.Remove(r)&#xA;Next&#xA;descartadas = quitar.Count&#xA;blanqueadas = blanqueados" DisplayName="Invocar código" sap:VirtualizedContainerService.HintSize="616,400.8" sap2010:WorkflowViewState.IdRef="InvokeCode_4">
+        <ui:InvokeCode.Arguments>
+          <InArgument x:TypeArguments="sd:DataTable" x:Key="dt">[dtProductos]</InArgument>
+          <OutArgument x:TypeArguments="x:Int32" x:Key="descartadas">[descartadas]</OutArgument>
+          <OutArgument x:TypeArguments="x:Int32" x:Key="blanqueadas">[blanqueadas]</OutArgument>
+        </ui:InvokeCode.Arguments>
+      </ui:InvokeCode>
+      <ui:LogMessage DisplayName="Registrar mensaje" sap:VirtualizedContainerService.HintSize="616,174.4" sap2010:WorkflowViewState.IdRef="LogMessage_20" Level="Info" Message="[&quot;Productos con datos numéricos inválidos dejados vacíos: &quot; + blanqueadas.ToString]" />
+      <ui:LogMessage DisplayName="Registrar mensaje" sap:VirtualizedContainerService.HintSize="616,174.4" sap2010:WorkflowViewState.IdRef="LogMessage_10" Level="Info" Message="[&quot;Productos descartados: &quot; + descartadas.ToString]" />
+      <ui:LogMessage DisplayName="Registrar mensaje" sap:VirtualizedContainerService.HintSize="616,174.4" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info" Message="[&quot;Total limpio -&gt; Clientes: &quot; + dtClientes.Rows.Count.ToString + &quot; | Productos: &quot; + dtProductos.Rows.Count.ToString]" />
+      <Assign DisplayName="Asignar" sap:VirtualizedContainerService.HintSize="616,174.4" sap2010:WorkflowViewState.IdRef="Assign_2">
+        <Assign.To>
+          <OutArgument x:TypeArguments="x:String">[cuerpo]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="x:String">[Newtonsoft.Json.JsonConvert.SerializeObject(New With {.jsonrpc = "2.0", .method = "call", .id = 1, .params = New With {.service = "common", .method = "authenticate", .args = New Object() {bdOdoo, usuarioOdoo, claveOdoo, New System.Collections.Generic.Dictionary(Of String, String)()}}})]</InArgument>
+        </Assign.Value>
+      </Assign>
+      <uwah:NetHttpRequest BasicAuthPassword="{x:Null}" BasicAuthSecurePassword="{x:Null}" BasicAuthUsername="{x:Null}" BinaryPayload="{x:Null}" ClientCertPassword="{x:Null}" ClientCertPath="{x:Null}" ClientCertSecurePassword="{x:Null}" Cookies="{x:Null}" CustomNegotiatedAuthCredentials="{x:Null}" FilePath="{x:Null}" FormData="{x:Null}" Headers="{x:Null}" LocalFiles="{x:Null}" OAuthToken="{x:Null}" OutputFileName="{x:Null}" OutputFileTargetFolder="{x:Null}" Parameters="{x:Null}" PathResource="{x:Null}" ProxyConfiguration="{x:Null}" ResourceFiles="{x:Null}" AuthenticationType="None" ContinueOnError="True" DisableSslVerification="False" DisplayName="Solicitud HTTP" EnableCookies="True" FileOverwrite="AutoRename" FollowRedirects="True" FormDataParts="[New List (Of FormDataPart) From _&#xD;&#xA;{&#xD;&#xA;&#x9;New FileFormDataPart(),&#xD;&#xA;&#x9;New BinaryFormDataPart(),&#xD;&#xA;&#x9;New TextFormDataPart()&#xD;&#xA;}]" sap:VirtualizedContainerService.HintSize="616,432.8" sap2010:WorkflowViewState.IdRef="NetHttpRequest_1" InitialDelay="500" MaxRedirects="3" MaxRetryAfterDelay="30000" Method="POST" Multiplier="2" PreferRetryAfterValue="True" RequestBodyType="Text" RequestUrl="[urlOdoo + &quot;/jsonrpc&quot;]" Result="[resp]" RetryCount="3" RetryStatusCodes="[New List (Of System.Net.HttpStatusCode) From _&#xD;&#xA;{&#xD;&#xA;&#x9;System.Net.HttpStatusCode.RequestTimeout,&#xD;&#xA;&#x9;System.Net.HttpStatusCode.TooManyRequests,&#xD;&#xA;&#x9;System.Net.HttpStatusCode.InternalServerError,&#xD;&#xA;&#x9;System.Net.HttpStatusCode.BadGateway,&#xD;&#xA;&#x9;System.Net.HttpStatusCode.ServiceUnavailable,&#xD;&#xA;&#x9;System.Net.HttpStatusCode.GatewayTimeout&#xD;&#xA;}]" SaveRawRequestResponse="False" SaveResponseAsFile="False" TextPayload="[cuerpo]" TextPayloadContentType="application/json" TextPayloadEncoding="UTF-8" TlsProtocol="Automatic" UseJitter="True" UseOsNegotiatedAuthCredentials="True">
+        <uwah:NetHttpRequest.TimeoutInMiliseconds>
+          <InArgument x:TypeArguments="s:Nullable(x:Int32)">
+            <Literal x:TypeArguments="s:Nullable(x:Int32)" Value="10000" />
+          </InArgument>
+        </uwah:NetHttpRequest.TimeoutInMiliseconds>
+      </uwah:NetHttpRequest>
+      <Assign DisplayName="Asignar" sap:VirtualizedContainerService.HintSize="616,174.4" sap2010:WorkflowViewState.IdRef="Assign_3">
+        <Assign.To>
+          <OutArgument x:TypeArguments="x:String">[respuesta]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="x:String">[resp.TextContent]</InArgument>
+        </Assign.Value>
+      </Assign>
+      <Assign DisplayName="Asignar" sap:VirtualizedContainerService.HintSize="616,174.4" sap2010:WorkflowViewState.IdRef="Assign_4">
+        <Assign.To>
+          <OutArgument x:TypeArguments="x:Int32">[uid]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="x:Int32">[Integer.Parse(System.Text.RegularExpressions.Regex.Match(respuesta, """result""\s*:\s*(\d+)").Groups(1).Value)]</InArgument>
+        </Assign.Value>
+      </Assign>
+      <ui:LogMessage DisplayName="Registrar mensaje" sap:VirtualizedContainerService.HintSize="616,174.4" sap2010:WorkflowViewState.IdRef="LogMessage_11" Level="Info" Message="[&quot;Conectado a Odoo, uid = &quot; + uid.ToString]" />
+      <Assign DisplayName="Asignar" sap:VirtualizedContainerService.HintSize="616,174.4" sap2010:WorkflowViewState.IdRef="Assign_5">
+        <Assign.To>
+          <OutArgument x:TypeArguments="x:String">[cuerpo]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="x:String">[Newtonsoft.Json.JsonConvert.SerializeObject(New With {.jsonrpc = "2.0", .method = "call", .id = 2, .params = New With {.service = "object", .method = "execute_kw", .args = New Object() {bdOdoo, uid, claveOdoo, "res.country", "search_read", New Object() {New Object() {}}, New With {.fields = New String() {"name", "code"}}}}})]</InArgument>
+        </Assign.Value>
+      </Assign>
+      <uwah:NetHttpRequest BasicAuthPassword="{x:Null}" BasicAuthSecurePassword="{x:Null}" BasicAuthUsername="{x:Null}" BinaryPayload="{x:Null}" ClientCertPassword="{x:Null}" ClientCertPath="{x:Null}" ClientCertSecurePassword="{x:Null}" Cookies="{x:Null}" CustomNegotiatedAuthCredentials="{x:Null}" FilePath="{x:Null}" FormData="{x:Null}" Headers="{x:Null}" LocalFiles="{x:Null}" OAuthToken="{x:Null}" OutputFileName="{x:Null}" OutputFileTargetFolder="{x:Null}" Parameters="{x:Null}" PathResource="{x:Null}" ProxyConfiguration="{x:Null}" ResourceFiles="{x:Null}" AuthenticationType="None" ContinueOnError="True" DisableSslVerification="False" DisplayName="Solicitud HTTP" EnableCookies="True" FileOverwrite="AutoRename" FollowRedirects="True" FormDataParts="[New List (Of FormDataPart) From _&#xD;&#xA;{&#xD;&#xA;&#x9;New FileFormDataPart(),&#xD;&#xA;&#x9;New BinaryFormDataPart(),&#xD;&#xA;&#x9;New TextFormDataPart()&#xD;&#xA;}]" sap:VirtualizedContainerService.HintSize="616,432.8" sap2010:WorkflowViewState.IdRef="NetHttpRequest_2" InitialDelay="500" MaxRedirects="3" MaxRetryAfterDelay="30000" Method="POST" Multiplier="2" PreferRetryAfterValue="True" RequestBodyType="Text" RequestUrl="[urlOdoo + &quot;/jsonrpc&quot;]" Result="[resp]" RetryCount="3" RetryStatusCodes="[New List (Of System.Net.HttpStatusCode) From _&#xD;&#xA;{&#xD;&#xA;&#x9;System.Net.HttpStatusCode.RequestTimeout,&#xD;&#xA;&#x9;System.Net.HttpStatusCode.TooManyRequests,&#xD;&#xA;&#x9;System.Net.HttpStatusCode.InternalServerError,&#xD;&#xA;&#x9;System.Net.HttpStatusCode.BadGateway,&#xD;&#xA;&#x9;System.Net.HttpStatusCode.ServiceUnavailable,&#xD;&#xA;&#x9;System.Net.HttpStatusCode.GatewayTimeout&#xD;&#xA;}]" SaveRawRequestResponse="False" SaveResponseAsFile="False" TextPayload="[cuerpo]" TextPayloadContentType="application/json" TextPayloadEncoding="UTF-8" TlsProtocol="Automatic" UseJitter="True" UseOsNegotiatedAuthCredentials="True">
+        <uwah:NetHttpRequest.TimeoutInMiliseconds>
+          <InArgument x:TypeArguments="s:Nullable(x:Int32)">
+            <Literal x:TypeArguments="s:Nullable(x:Int32)" Value="10000" />
+          </InArgument>
+        </uwah:NetHttpRequest.TimeoutInMiliseconds>
+      </uwah:NetHttpRequest>
+      <Assign DisplayName="Asignar" sap:VirtualizedContainerService.HintSize="616,174.4" sap2010:WorkflowViewState.IdRef="Assign_6">
+        <Assign.To>
+          <OutArgument x:TypeArguments="x:String">[respPaises]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="x:String">[resp.TextContent]</InArgument>
+        </Assign.Value>
+      </Assign>
+      <ui:LogMessage DisplayName="Registrar mensaje" sap:VirtualizedContainerService.HintSize="616,174.4" sap2010:WorkflowViewState.IdRef="LogMessage_12" Level="Info" Message="[&quot;Países recibidos: &quot; + respPaises.Length.ToString + &quot; caracteres&quot;]" />
+      <ui:InvokeCode ContinueOnError="{x:Null}" Code="Dim norm As Func(Of String, String) = Function(s As String) As String&#xA;    Dim d As String = s.Normalize(System.Text.NormalizationForm.FormD)&#xA;    Dim sb As New System.Text.StringBuilder()&#xA;    For Each ch As Char In d&#xA;        If System.Globalization.CharUnicodeInfo.GetUnicodeCategory(ch) &lt;&gt; System.Globalization.UnicodeCategory.NonSpacingMark Then sb.Append(ch)&#xA;    Next&#xA;    Return sb.ToString().ToLower().Trim()&#xA;End Function&#xA;&#xA;Dim slug As Func(Of String, String) = Function(s As String) As String&#xA;    Return System.Text.RegularExpressions.Regex.Replace(norm(s), &quot;[^a-z0-9]+&quot;, &quot;_&quot;).Trim(&quot;_&quot;c)&#xA;End Function&#xA;&#xA;Dim t As Func(Of System.Data.DataRow, String, String) = Function(r As System.Data.DataRow, col As String) As String&#xA;    If Not r.Table.Columns.Contains(col) Then Return &quot;&quot;&#xA;    If r.IsNull(col) Then Return &quot;&quot;&#xA;    Return r(col).ToString().Trim()&#xA;End Function&#xA;&#xA;Dim paises As New System.Collections.Generic.Dictionary(Of String, String)&#xA;Dim resultado As Newtonsoft.Json.Linq.JToken = Newtonsoft.Json.Linq.JObject.Parse(respPaises)(&quot;result&quot;)&#xA;For Each p As Newtonsoft.Json.Linq.JToken In resultado&#xA;    Dim nombrePais As String = p(&quot;name&quot;).ToString()&#xA;    paises(norm(nombrePais)) = nombrePais&#xA;Next&#xA;&#xA;Dim campos As String() = New String() {&quot;id&quot;, &quot;name&quot;, &quot;company_type&quot;, &quot;parent_id&quot;, &quot;email&quot;, &quot;phone&quot;, &quot;street&quot;, &quot;street2&quot;, &quot;city&quot;, &quot;zip&quot;, &quot;country_id&quot;, &quot;vat&quot;, &quot;website&quot;, &quot;category_id&quot;, &quot;ref&quot;, &quot;comment&quot;}&#xA;Dim filas As New System.Collections.Generic.List(Of String())&#xA;For Each r As System.Data.DataRow In dt.Rows&#xA;    Dim tipo As String = t(r, &quot;Company Type&quot;).ToLower()&#xA;    Dim esEmpresa As Boolean = (tipo = &quot;company&quot; OrElse tipo = &quot;empresa&quot;)&#xA;    If esEmpresa &lt;&gt; soloEmpresas Then Continue For&#xA;    If limite &gt; 0 AndAlso filas.Count &gt;= limite Then Exit For&#xA;    Dim nombre As String = t(r, &quot;Name&quot;)&#xA;    Dim email As String = t(r, &quot;Email&quot;).ToLower()&#xA;    Dim pais As String = t(r, &quot;Country&quot;)&#xA;    If paises.ContainsKey(norm(pais)) Then pais = paises(norm(pais))&#xA;    Dim etiquetas As String = If(t(r, &quot;Tags&quot;) = &quot;&quot;, &quot;RPA&quot;, t(r, &quot;Tags&quot;) &amp; &quot;,RPA&quot;)&#xA;    filas.Add(New String() {&quot;rpa_cli_&quot; &amp; slug(If(email &lt;&gt; &quot;&quot;, email, nombre)), nombre, If(esEmpresa, &quot;company&quot;, &quot;person&quot;), t(r, &quot;Related Company&quot;), email, t(r, &quot;Phone&quot;), t(r, &quot;Street&quot;), t(r, &quot;Street2&quot;), t(r, &quot;City&quot;), t(r, &quot;Zip&quot;), pais, t(r, &quot;Tax ID&quot;), t(r, &quot;Website&quot;), etiquetas, t(r, &quot;Reference&quot;), t(r, &quot;Notes&quot;)})&#xA;Next&#xA;&#xA;cantidad = filas.Count&#xA;Dim cuerpoJson = New With {.jsonrpc = &quot;2.0&quot;, .method = &quot;call&quot;, .id = 3, .params = New With {.service = &quot;object&quot;, .method = &quot;execute_kw&quot;, .args = New Object() {bd, uid, clave, &quot;res.partner&quot;, &quot;load&quot;, New Object() {campos, filas}, New With {.context = New With {.name_create_enabled_fields = New With {.category_id = True}, .tracking_disable = True}}}}}&#xA;salida = Newtonsoft.Json.JsonConvert.SerializeObject(cuerpoJson)" DisplayName="Invocar código" sap:VirtualizedContainerService.HintSize="616,400.8" sap2010:WorkflowViewState.IdRef="InvokeCode_9">
+        <ui:InvokeCode.Arguments>
+          <InArgument x:TypeArguments="sd:DataTable" x:Key="dt">[dtClientes]</InArgument>
+          <InArgument x:TypeArguments="x:String" x:Key="bd">[bdOdoo]</InArgument>
+          <InArgument x:TypeArguments="x:Int32" x:Key="uid">[uid]</InArgument>
+          <InArgument x:TypeArguments="x:String" x:Key="clave">[claveOdoo]</InArgument>
+          <InArgument x:TypeArguments="x:String" x:Key="respPaises">[respPaises]</InArgument>
+          <InArgument x:TypeArguments="x:Boolean" x:Key="soloEmpresas">True</InArgument>
+          <OutArgument x:TypeArguments="x:String" x:Key="salida">[cuerpo]</OutArgument>
+          <OutArgument x:TypeArguments="x:Int32" x:Key="cantidad">[cantidad]</OutArgument>
+          <InArgument x:TypeArguments="x:Int32" x:Key="limite">[limiteCarga]</InArgument>
+        </ui:InvokeCode.Arguments>
+      </ui:InvokeCode>
+      <ui:LogMessage DisplayName="Registrar mensaje" sap:VirtualizedContainerService.HintSize="616,174.4" sap2010:WorkflowViewState.IdRef="LogMessage_13" Level="Info" Message="[&quot;Empresas a enviar: &quot; + cantidad.ToString]" />
+      <If Condition="[cantidad &gt; 0]" sap:VirtualizedContainerService.HintSize="616,1060.8" sap2010:WorkflowViewState.IdRef="If_6">
+        <If.Then>
+          <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="449.6,832.8" sap2010:WorkflowViewState.IdRef="Sequence_16">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <uwah:NetHttpRequest BasicAuthPassword="{x:Null}" BasicAuthSecurePassword="{x:Null}" BasicAuthUsername="{x:Null}" BinaryPayload="{x:Null}" ClientCertPassword="{x:Null}" ClientCertPath="{x:Null}" ClientCertSecurePassword="{x:Null}" Cookies="{x:Null}" CustomNegotiatedAuthCredentials="{x:Null}" FilePath="{x:Null}" FormData="{x:Null}" Headers="{x:Null}" LocalFiles="{x:Null}" OAuthToken="{x:Null}" OutputFileName="{x:Null}" OutputFileTargetFolder="{x:Null}" Parameters="{x:Null}" PathResource="{x:Null}" ProxyConfiguration="{x:Null}" ResourceFiles="{x:Null}" AuthenticationType="None" ContinueOnError="True" DisableSslVerification="False" DisplayName="Solicitud HTTP" EnableCookies="True" FileOverwrite="AutoRename" FollowRedirects="True" FormDataParts="[New List (Of FormDataPart) From _&#xD;&#xA;{&#xD;&#xA;&#x9;New FileFormDataPart(),&#xD;&#xA;&#x9;New BinaryFormDataPart(),&#xD;&#xA;&#x9;New TextFormDataPart()&#xD;&#xA;}]" sap:VirtualizedContainerService.HintSize="416,432.8" sap2010:WorkflowViewState.IdRef="NetHttpRequest_3" InitialDelay="500" MaxRedirects="3" MaxRetryAfterDelay="30000" Method="POST" Multiplier="2" PreferRetryAfterValue="True" RequestBodyType="Text" RequestUrl="[urlOdoo + &quot;/jsonrpc&quot;]" Result="[resp]" RetryCount="3" RetryStatusCodes="[New List (Of System.Net.HttpStatusCode) From _&#xD;&#xA;{&#xD;&#xA;&#x9;System.Net.HttpStatusCode.RequestTimeout,&#xD;&#xA;&#x9;System.Net.HttpStatusCode.TooManyRequests,&#xD;&#xA;&#x9;System.Net.HttpStatusCode.InternalServerError,&#xD;&#xA;&#x9;System.Net.HttpStatusCode.BadGateway,&#xD;&#xA;&#x9;System.Net.HttpStatusCode.ServiceUnavailable,&#xD;&#xA;&#x9;System.Net.HttpStatusCode.GatewayTimeout&#xD;&#xA;}]" SaveRawRequestResponse="False" SaveResponseAsFile="False" TextPayload="[cuerpo]" TextPayloadContentType="application/json" TextPayloadEncoding="UTF-8" TlsProtocol="Automatic" UseJitter="True" UseOsNegotiatedAuthCredentials="True">
+              <uwah:NetHttpRequest.TimeoutInMiliseconds>
+                <InArgument x:TypeArguments="s:Nullable(x:Int32)">
+                  <Literal x:TypeArguments="s:Nullable(x:Int32)" Value="10000" />
+                </InArgument>
+              </uwah:NetHttpRequest.TimeoutInMiliseconds>
+            </uwah:NetHttpRequest>
+            <Assign DisplayName="Asignar" sap:VirtualizedContainerService.HintSize="416,174.4" sap2010:WorkflowViewState.IdRef="Assign_7">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:String">[respuesta]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:String">[resp.TextContent]</InArgument>
+              </Assign.Value>
+            </Assign>
+            <ui:LogMessage DisplayName="Registrar mensaje" sap:VirtualizedContainerService.HintSize="416,165.6" sap2010:WorkflowViewState.IdRef="LogMessage_14" Level="Info" Message="[&quot;Respuesta empresas: &quot; + respuesta]" />
+          </Sequence>
+        </If.Then>
+        <If.Else>
+          <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="449.6,89.6" sap2010:WorkflowViewState.IdRef="Sequence_18">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </Sequence>
+        </If.Else>
+      </If>
+      <ui:InvokeCode ContinueOnError="{x:Null}" Code="Dim norm As Func(Of String, String) = Function(s As String) As String&#xA;    Dim d As String = s.Normalize(System.Text.NormalizationForm.FormD)&#xA;    Dim sb As New System.Text.StringBuilder()&#xA;    For Each ch As Char In d&#xA;        If System.Globalization.CharUnicodeInfo.GetUnicodeCategory(ch) &lt;&gt; System.Globalization.UnicodeCategory.NonSpacingMark Then sb.Append(ch)&#xA;    Next&#xA;    Return sb.ToString().ToLower().Trim()&#xA;End Function&#xA;&#xA;Dim slug As Func(Of String, String) = Function(s As String) As String&#xA;    Return System.Text.RegularExpressions.Regex.Replace(norm(s), &quot;[^a-z0-9]+&quot;, &quot;_&quot;).Trim(&quot;_&quot;c)&#xA;End Function&#xA;&#xA;Dim t As Func(Of System.Data.DataRow, String, String) = Function(r As System.Data.DataRow, col As String) As String&#xA;    If Not r.Table.Columns.Contains(col) Then Return &quot;&quot;&#xA;    If r.IsNull(col) Then Return &quot;&quot;&#xA;    Return r(col).ToString().Trim()&#xA;End Function&#xA;&#xA;Dim paises As New System.Collections.Generic.Dictionary(Of String, String)&#xA;Dim resultado As Newtonsoft.Json.Linq.JToken = Newtonsoft.Json.Linq.JObject.Parse(respPaises)(&quot;result&quot;)&#xA;For Each p As Newtonsoft.Json.Linq.JToken In resultado&#xA;    Dim nombrePais As String = p(&quot;name&quot;).ToString()&#xA;    paises(norm(nombrePais)) = nombrePais&#xA;Next&#xA;&#xA;Dim campos As String() = New String() {&quot;id&quot;, &quot;name&quot;, &quot;company_type&quot;, &quot;parent_id&quot;, &quot;email&quot;, &quot;phone&quot;, &quot;street&quot;, &quot;street2&quot;, &quot;city&quot;, &quot;zip&quot;, &quot;country_id&quot;, &quot;vat&quot;, &quot;website&quot;, &quot;category_id&quot;, &quot;ref&quot;, &quot;comment&quot;}&#xA;Dim filas As New System.Collections.Generic.List(Of String())&#xA;For Each r As System.Data.DataRow In dt.Rows&#xA;    Dim tipo As String = t(r, &quot;Company Type&quot;).ToLower()&#xA;    Dim esEmpresa As Boolean = (tipo = &quot;company&quot; OrElse tipo = &quot;empresa&quot;)&#xA;    If esEmpresa &lt;&gt; soloEmpresas Then Continue For&#xA;    If limite &gt; 0 AndAlso filas.Count &gt;= limite Then Exit For&#xA;    Dim nombre As String = t(r, &quot;Name&quot;)&#xA;    Dim email As String = t(r, &quot;Email&quot;).ToLower()&#xA;    Dim pais As String = t(r, &quot;Country&quot;)&#xA;    If paises.ContainsKey(norm(pais)) Then pais = paises(norm(pais))&#xA;    Dim etiquetas As String = If(t(r, &quot;Tags&quot;) = &quot;&quot;, &quot;RPA&quot;, t(r, &quot;Tags&quot;) &amp; &quot;,RPA&quot;)&#xA;    filas.Add(New String() {&quot;rpa_cli_&quot; &amp; slug(If(email &lt;&gt; &quot;&quot;, email, nombre)), nombre, If(esEmpresa, &quot;company&quot;, &quot;person&quot;), t(r, &quot;Related Company&quot;), email, t(r, &quot;Phone&quot;), t(r, &quot;Street&quot;), t(r, &quot;Street2&quot;), t(r, &quot;City&quot;), t(r, &quot;Zip&quot;), pais, t(r, &quot;Tax ID&quot;), t(r, &quot;Website&quot;), etiquetas, t(r, &quot;Reference&quot;), t(r, &quot;Notes&quot;)})&#xA;Next&#xA;&#xA;cantidad = filas.Count&#xA;Dim cuerpoJson = New With {.jsonrpc = &quot;2.0&quot;, .method = &quot;call&quot;, .id = 3, .params = New With {.service = &quot;object&quot;, .method = &quot;execute_kw&quot;, .args = New Object() {bd, uid, clave, &quot;res.partner&quot;, &quot;load&quot;, New Object() {campos, filas}, New With {.context = New With {.name_create_enabled_fields = New With {.category_id = True}, .tracking_disable = True}}}}}&#xA;salida = Newtonsoft.Json.JsonConvert.SerializeObject(cuerpoJson)" DisplayName="Invocar código" sap:VirtualizedContainerService.HintSize="616,400.8" sap2010:WorkflowViewState.IdRef="InvokeCode_10">
+        <ui:InvokeCode.Arguments>
+          <InArgument x:TypeArguments="sd:DataTable" x:Key="dt">[dtClientes]</InArgument>
+          <InArgument x:TypeArguments="x:String" x:Key="bd">[bdOdoo]</InArgument>
+          <InArgument x:TypeArguments="x:Int32" x:Key="uid">[uid]</InArgument>
+          <InArgument x:TypeArguments="x:String" x:Key="clave">[claveOdoo]</InArgument>
+          <InArgument x:TypeArguments="x:String" x:Key="respPaises">[respPaises]</InArgument>
+          <InArgument x:TypeArguments="x:Boolean" x:Key="soloEmpresas">False</InArgument>
+          <OutArgument x:TypeArguments="x:String" x:Key="salida">[cuerpo]</OutArgument>
+          <OutArgument x:TypeArguments="x:Int32" x:Key="cantidad">[cantidad]</OutArgument>
+          <InArgument x:TypeArguments="x:Int32" x:Key="limite">[limiteCarga]</InArgument>
+        </ui:InvokeCode.Arguments>
+      </ui:InvokeCode>
+      <ui:LogMessage DisplayName="Registrar mensaje" sap:VirtualizedContainerService.HintSize="616,174.4" sap2010:WorkflowViewState.IdRef="LogMessage_15" Level="Info" Message="[&quot;Personas a enviar: &quot; + cantidad.ToString]" />
+      <If Condition="[cantidad &gt; 0]" sap:VirtualizedContainerService.HintSize="616,1060.8" sap2010:WorkflowViewState.IdRef="If_7">
+        <If.Then>
+          <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="449.6,832.8" sap2010:WorkflowViewState.IdRef="Sequence_17">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <uwah:NetHttpRequest BasicAuthPassword="{x:Null}" BasicAuthSecurePassword="{x:Null}" BasicAuthUsername="{x:Null}" BinaryPayload="{x:Null}" ClientCertPassword="{x:Null}" ClientCertPath="{x:Null}" ClientCertSecurePassword="{x:Null}" Cookies="{x:Null}" CustomNegotiatedAuthCredentials="{x:Null}" FilePath="{x:Null}" FormData="{x:Null}" Headers="{x:Null}" LocalFiles="{x:Null}" OAuthToken="{x:Null}" OutputFileName="{x:Null}" OutputFileTargetFolder="{x:Null}" Parameters="{x:Null}" PathResource="{x:Null}" ProxyConfiguration="{x:Null}" ResourceFiles="{x:Null}" AuthenticationType="None" ContinueOnError="True" DisableSslVerification="False" DisplayName="Solicitud HTTP" EnableCookies="True" FileOverwrite="AutoRename" FollowRedirects="True" FormDataParts="[New List (Of FormDataPart) From _&#xA;{&#xA;&#x9;New FileFormDataPart(),&#xA;&#x9;New BinaryFormDataPart(),&#xA;&#x9;New TextFormDataPart()&#xA;}]" sap:VirtualizedContainerService.HintSize="416,432.8" sap2010:WorkflowViewState.IdRef="NetHttpRequest_4" InitialDelay="500" MaxRedirects="3" MaxRetryAfterDelay="30000" Method="POST" Multiplier="2" PreferRetryAfterValue="True" RequestBodyType="Text" RequestUrl="[urlOdoo + &quot;/jsonrpc&quot;]" Result="[resp]" RetryCount="3" RetryStatusCodes="[New List (Of System.Net.HttpStatusCode) From _&#xA;{&#xA;&#x9;System.Net.HttpStatusCode.RequestTimeout,&#xA;&#x9;System.Net.HttpStatusCode.TooManyRequests,&#xA;&#x9;System.Net.HttpStatusCode.InternalServerError,&#xA;&#x9;System.Net.HttpStatusCode.BadGateway,&#xA;&#x9;System.Net.HttpStatusCode.ServiceUnavailable,&#xA;&#x9;System.Net.HttpStatusCode.GatewayTimeout&#xA;}]" SaveRawRequestResponse="False" SaveResponseAsFile="False" TextPayload="[cuerpo]" TextPayloadContentType="application/json" TextPayloadEncoding="UTF-8" TlsProtocol="Automatic" UseJitter="True" UseOsNegotiatedAuthCredentials="True">
+              <uwah:NetHttpRequest.TimeoutInMiliseconds>
+                <InArgument x:TypeArguments="s:Nullable(x:Int32)">
+                  <Literal x:TypeArguments="s:Nullable(x:Int32)" Value="10000" />
+                </InArgument>
+              </uwah:NetHttpRequest.TimeoutInMiliseconds>
+            </uwah:NetHttpRequest>
+            <Assign DisplayName="Asignar" sap:VirtualizedContainerService.HintSize="416,174.4" sap2010:WorkflowViewState.IdRef="Assign_8">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:String">[respuesta]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:String">[resp.TextContent]</InArgument>
+              </Assign.Value>
+            </Assign>
+            <ui:LogMessage DisplayName="Registrar mensaje" sap:VirtualizedContainerService.HintSize="416,165.6" sap2010:WorkflowViewState.IdRef="LogMessage_16" Level="Info" Message="[&quot;Respuesta Personas: &quot; + respuesta]" />
+          </Sequence>
+        </If.Then>
+        <If.Else>
+          <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="449.6,89.6" sap2010:WorkflowViewState.IdRef="Sequence_20">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </Sequence>
+        </If.Else>
+      </If>
+      <ui:InvokeCode ContinueOnError="{x:Null}" Code="Dim norm As Func(Of String, String) = Function(s As String) As String&#xA;    Dim d As String = s.Normalize(System.Text.NormalizationForm.FormD)&#xA;    Dim sb As New System.Text.StringBuilder()&#xA;    For Each ch As Char In d&#xA;        If System.Globalization.CharUnicodeInfo.GetUnicodeCategory(ch) &lt;&gt; System.Globalization.UnicodeCategory.NonSpacingMark Then sb.Append(ch)&#xA;    Next&#xA;    Return sb.ToString().ToLower().Trim()&#xA;End Function&#xA;&#xA;Dim slug As Func(Of String, String) = Function(s As String) As String&#xA;    Return System.Text.RegularExpressions.Regex.Replace(norm(s), &quot;[^a-z0-9]+&quot;, &quot;_&quot;).Trim(&quot;_&quot;c)&#xA;End Function&#xA;&#xA;Dim t As Func(Of System.Data.DataRow, String, String) = Function(r As System.Data.DataRow, col As String) As String&#xA;    If Not r.Table.Columns.Contains(col) Then Return &quot;&quot;&#xA;    If r.IsNull(col) Then Return &quot;&quot;&#xA;    Return r(col).ToString().Trim()&#xA;End Function&#xA;&#xA;Dim num As Func(Of String, String) = Function(s As String) As String&#xA;    Return s.Replace(&quot;,&quot;, &quot;.&quot;)&#xA;End Function&#xA;&#xA;Dim tipos As New System.Collections.Generic.Dictionary(Of String, String)&#xA;tipos(&quot;goods&quot;) = &quot;product&quot;&#xA;tipos(&quot;storable product&quot;) = &quot;product&quot;&#xA;tipos(&quot;producto almacenable&quot;) = &quot;product&quot;&#xA;tipos(&quot;consumable&quot;) = &quot;consu&quot;&#xA;tipos(&quot;consumible&quot;) = &quot;consu&quot;&#xA;tipos(&quot;service&quot;) = &quot;service&quot;&#xA;tipos(&quot;servicio&quot;) = &quot;service&quot;&#xA;&#xA;Dim campos As String() = New String() {&quot;id&quot;, &quot;name&quot;, &quot;detailed_type&quot;, &quot;default_code&quot;, &quot;barcode&quot;, &quot;list_price&quot;, &quot;standard_price&quot;, &quot;weight&quot;, &quot;description_sale&quot;, &quot;is_published&quot;}&#xA;Dim filas As New System.Collections.Generic.List(Of String())&#xA;Dim filasStock As New System.Collections.Generic.List(Of String())&#xA;&#xA;For Each r As System.Data.DataRow In dt.Rows&#xA;    If limite &gt; 0 AndAlso filas.Count &gt;= limite Then Exit For&#xA;    Dim nombre As String = t(r, &quot;Name&quot;)&#xA;    Dim referencia As String = t(r, &quot;Internal Reference&quot;)&#xA;    Dim idExterno As String = t(r, &quot;External ID&quot;)&#xA;    If idExterno = &quot;&quot; Then idExterno = t(r, &quot;ID Externo&quot;)&#xA;    If idExterno = &quot;&quot; Then idExterno = &quot;rpa_prod_&quot; &amp; slug(If(referencia &lt;&gt; &quot;&quot;, referencia, nombre))&#xA;    Dim tipoTxt As String = t(r, &quot;Product Type&quot;).ToLower()&#xA;    Dim tipo As String = If(tipos.ContainsKey(tipoTxt), tipos(tipoTxt), &quot;consu&quot;)&#xA;    Dim pub As String = t(r, &quot;Está publicado&quot;).ToLower()&#xA;    Dim publicado As String = If(pub = &quot;1&quot; OrElse pub = &quot;true&quot; OrElse pub = &quot;verdadero&quot; OrElse pub = &quot;sí&quot; OrElse pub = &quot;si&quot; OrElse pub = &quot;yes&quot;, &quot;1&quot;, &quot;0&quot;)&#xA;    filas.Add(New String() {idExterno, nombre, tipo, referencia, t(r, &quot;Barcode&quot;), num(t(r, &quot;Sales Price&quot;)), num(t(r, &quot;Cost&quot;)), num(t(r, &quot;Weight&quot;)), t(r, &quot;Sales Description&quot;), publicado})&#xA;    Dim q As Double&#xA;    If tipo = &quot;product&quot; AndAlso Double.TryParse(num(t(r, &quot;Cantidad a la mano&quot;)), System.Globalization.NumberStyles.Any, System.Globalization.CultureInfo.InvariantCulture, q) AndAlso q &gt; 0 Then&#xA;        filasStock.Add(New String() {If(referencia &lt;&gt; &quot;&quot;, referencia, nombre), q.ToString(System.Globalization.CultureInfo.InvariantCulture)})&#xA;    End If&#xA;Next&#xA;&#xA;cantidad = filas.Count&#xA;cantidadStock = filasStock.Count&#xA;Dim ctx = New With {.tracking_disable = True}&#xA;&#xA;Dim cuerpoProd = New With {.jsonrpc = &quot;2.0&quot;, .method = &quot;call&quot;, .id = 4, .params = New With {.service = &quot;object&quot;, .method = &quot;execute_kw&quot;, .args = New Object() {bd, uid, clave, &quot;product.template&quot;, &quot;load&quot;, New Object() {campos, filas}, New With {.context = ctx}}}}&#xA;salida = Newtonsoft.Json.JsonConvert.SerializeObject(cuerpoProd)&#xA;&#xA;Dim camposStock As String() = New String() {&quot;product_id&quot;, &quot;inventory_quantity_auto_apply&quot;}&#xA;Dim cuerpoStk = New With {.jsonrpc = &quot;2.0&quot;, .method = &quot;call&quot;, .id = 5, .params = New With {.service = &quot;object&quot;, .method = &quot;execute_kw&quot;, .args = New Object() {bd, uid, clave, &quot;stock.quant&quot;, &quot;load&quot;, New Object() {camposStock, filasStock}, New With {.context = ctx}}}}&#xA;salidaStock = Newtonsoft.Json.JsonConvert.SerializeObject(cuerpoStk)" DisplayName="Invocar código" sap:VirtualizedContainerService.HintSize="616,400.8" sap2010:WorkflowViewState.IdRef="InvokeCode_11">
+        <ui:InvokeCode.Arguments>
+          <InArgument x:TypeArguments="sd:DataTable" x:Key="dt">[dtProductos]</InArgument>
+          <InArgument x:TypeArguments="x:String" x:Key="bd">[bdOdoo]</InArgument>
+          <InArgument x:TypeArguments="x:Int32" x:Key="uid">[uid]</InArgument>
+          <InArgument x:TypeArguments="x:String" x:Key="clave">[claveOdoo]</InArgument>
+          <OutArgument x:TypeArguments="x:String" x:Key="salida">[cuerpo]</OutArgument>
+          <OutArgument x:TypeArguments="x:Int32" x:Key="cantidad">[cantidad]</OutArgument>
+          <InArgument x:TypeArguments="x:Int32" x:Key="limite">[limiteCarga]</InArgument>
+          <OutArgument x:TypeArguments="x:String" x:Key="salidaStock">[cuerpoStock]</OutArgument>
+          <OutArgument x:TypeArguments="x:Int32" x:Key="cantidadStock">[cantidadStock]</OutArgument>
+        </ui:InvokeCode.Arguments>
+      </ui:InvokeCode>
+      <ui:LogMessage DisplayName="Registrar mensaje" sap:VirtualizedContainerService.HintSize="616,174.4" sap2010:WorkflowViewState.IdRef="LogMessage_17" Level="Info" Message="[&quot;Productos a enviar: &quot; + cantidad.ToString + &quot; | Existencias a aplicar: &quot; + cantidadStock.ToString]" />
+      <If Condition="[cantidad &gt; 0]" sap:VirtualizedContainerService.HintSize="616,1060.8" sap2010:WorkflowViewState.IdRef="If_8">
+        <If.Then>
+          <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="449.6,832.8" sap2010:WorkflowViewState.IdRef="Sequence_21">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <uwah:NetHttpRequest BasicAuthPassword="{x:Null}" BasicAuthSecurePassword="{x:Null}" BasicAuthUsername="{x:Null}" BinaryPayload="{x:Null}" ClientCertPassword="{x:Null}" ClientCertPath="{x:Null}" ClientCertSecurePassword="{x:Null}" Cookies="{x:Null}" CustomNegotiatedAuthCredentials="{x:Null}" FilePath="{x:Null}" FormData="{x:Null}" Headers="{x:Null}" LocalFiles="{x:Null}" OAuthToken="{x:Null}" OutputFileName="{x:Null}" OutputFileTargetFolder="{x:Null}" Parameters="{x:Null}" PathResource="{x:Null}" ProxyConfiguration="{x:Null}" ResourceFiles="{x:Null}" AuthenticationType="None" ContinueOnError="True" DisableSslVerification="False" DisplayName="Solicitud HTTP" EnableCookies="True" FileOverwrite="AutoRename" FollowRedirects="True" FormDataParts="[New List (Of FormDataPart) From _&#xD;&#xA;{&#xD;&#xA;&#x9;New FileFormDataPart(),&#xD;&#xA;&#x9;New BinaryFormDataPart(),&#xD;&#xA;&#x9;New TextFormDataPart()&#xD;&#xA;}]" sap:VirtualizedContainerService.HintSize="416,432.8" sap2010:WorkflowViewState.IdRef="NetHttpRequest_5" InitialDelay="500" MaxRedirects="3" MaxRetryAfterDelay="30000" Method="POST" Multiplier="2" PreferRetryAfterValue="True" RequestBodyType="Text" RequestUrl="[urlOdoo + &quot;/jsonrpc&quot;]" Result="[resp]" RetryCount="3" RetryStatusCodes="[New List (Of System.Net.HttpStatusCode) From _&#xD;&#xA;{&#xD;&#xA;&#x9;System.Net.HttpStatusCode.RequestTimeout,&#xD;&#xA;&#x9;System.Net.HttpStatusCode.TooManyRequests,&#xD;&#xA;&#x9;System.Net.HttpStatusCode.InternalServerError,&#xD;&#xA;&#x9;System.Net.HttpStatusCode.BadGateway,&#xD;&#xA;&#x9;System.Net.HttpStatusCode.ServiceUnavailable,&#xD;&#xA;&#x9;System.Net.HttpStatusCode.GatewayTimeout&#xD;&#xA;}]" SaveRawRequestResponse="False" SaveResponseAsFile="False" TextPayload="[cuerpo]" TextPayloadContentType="application/json" TextPayloadEncoding="UTF-8" TlsProtocol="Automatic" UseJitter="True" UseOsNegotiatedAuthCredentials="True">
+              <uwah:NetHttpRequest.TimeoutInMiliseconds>
+                <InArgument x:TypeArguments="s:Nullable(x:Int32)">
+                  <Literal x:TypeArguments="s:Nullable(x:Int32)" Value="10000" />
+                </InArgument>
+              </uwah:NetHttpRequest.TimeoutInMiliseconds>
+            </uwah:NetHttpRequest>
+            <Assign DisplayName="Asignar" sap:VirtualizedContainerService.HintSize="416,174.4" sap2010:WorkflowViewState.IdRef="Assign_9">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:String">[respuesta]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:String">[resp.TextContent]</InArgument>
+              </Assign.Value>
+            </Assign>
+            <ui:LogMessage DisplayName="Registrar mensaje" sap:VirtualizedContainerService.HintSize="416,165.6" sap2010:WorkflowViewState.IdRef="LogMessage_18" Level="Info" Message="[&quot;Respuesta productos: &quot; + respuesta]" />
+          </Sequence>
+        </If.Then>
+        <If.Else>
+          <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="449.6,89.6" sap2010:WorkflowViewState.IdRef="Sequence_24">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </Sequence>
+        </If.Else>
+      </If>
+      <If Condition="[cantidadStock &gt; 0]" sap:VirtualizedContainerService.HintSize="616,1052" sap2010:WorkflowViewState.IdRef="If_9">
+        <If.Then>
+          <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="449.6,832.8" sap2010:WorkflowViewState.IdRef="Sequence_22">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <uwah:NetHttpRequest BasicAuthPassword="{x:Null}" BasicAuthSecurePassword="{x:Null}" BasicAuthUsername="{x:Null}" BinaryPayload="{x:Null}" ClientCertPassword="{x:Null}" ClientCertPath="{x:Null}" ClientCertSecurePassword="{x:Null}" Cookies="{x:Null}" CustomNegotiatedAuthCredentials="{x:Null}" FilePath="{x:Null}" FormData="{x:Null}" Headers="{x:Null}" LocalFiles="{x:Null}" OAuthToken="{x:Null}" OutputFileName="{x:Null}" OutputFileTargetFolder="{x:Null}" Parameters="{x:Null}" PathResource="{x:Null}" ProxyConfiguration="{x:Null}" ResourceFiles="{x:Null}" AuthenticationType="None" ContinueOnError="True" DisableSslVerification="False" DisplayName="Solicitud HTTP" EnableCookies="True" FileOverwrite="AutoRename" FollowRedirects="True" FormDataParts="[New List (Of FormDataPart) From _&#xA;{&#xA;&#x9;New FileFormDataPart(),&#xA;&#x9;New BinaryFormDataPart(),&#xA;&#x9;New TextFormDataPart()&#xA;}]" sap:VirtualizedContainerService.HintSize="416,432.8" sap2010:WorkflowViewState.IdRef="NetHttpRequest_6" InitialDelay="500" MaxRedirects="3" MaxRetryAfterDelay="30000" Method="POST" Multiplier="2" PreferRetryAfterValue="True" RequestBodyType="Text" RequestUrl="[urlOdoo + &quot;/jsonrpc&quot;]" Result="[resp]" RetryCount="3" RetryStatusCodes="[New List (Of System.Net.HttpStatusCode) From _&#xA;{&#xA;&#x9;System.Net.HttpStatusCode.RequestTimeout,&#xA;&#x9;System.Net.HttpStatusCode.TooManyRequests,&#xA;&#x9;System.Net.HttpStatusCode.InternalServerError,&#xA;&#x9;System.Net.HttpStatusCode.BadGateway,&#xA;&#x9;System.Net.HttpStatusCode.ServiceUnavailable,&#xA;&#x9;System.Net.HttpStatusCode.GatewayTimeout&#xA;}]" SaveRawRequestResponse="False" SaveResponseAsFile="False" TextPayload="[cuerpoStock]" TextPayloadContentType="application/json" TextPayloadEncoding="UTF-8" TlsProtocol="Automatic" UseJitter="True" UseOsNegotiatedAuthCredentials="True">
+              <uwah:NetHttpRequest.TimeoutInMiliseconds>
+                <InArgument x:TypeArguments="s:Nullable(x:Int32)">
+                  <Literal x:TypeArguments="s:Nullable(x:Int32)" Value="10000" />
+                </InArgument>
+              </uwah:NetHttpRequest.TimeoutInMiliseconds>
+            </uwah:NetHttpRequest>
+            <Assign DisplayName="Asignar" sap:VirtualizedContainerService.HintSize="416,174.4" sap2010:WorkflowViewState.IdRef="Assign_10">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:String">[respuesta]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:String">[resp.TextContent]</InArgument>
+              </Assign.Value>
+            </Assign>
+            <ui:LogMessage DisplayName="Registrar mensaje" sap:VirtualizedContainerService.HintSize="416,165.6" sap2010:WorkflowViewState.IdRef="LogMessage_19" Level="Info" Message="[&quot;Respuesta productos: &quot; + respuesta]" />
+          </Sequence>
+        </If.Then>
+        <If.Else>
+          <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="449.6,89.6" sap2010:WorkflowViewState.IdRef="Sequence_25">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </Sequence>
+        </If.Else>
+      </If>
+    </Sequence>
+  </Sequence>
+</Activity>
